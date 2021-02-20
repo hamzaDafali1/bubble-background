@@ -38,7 +38,7 @@ class bubbles {
                 }
             }    
         }
-        if(this.y < 0 || this.radius > rad * 1.5) {
+        if(this.y < 0 || this.radius > rad + 3) {
             this.x = Math.random() * canvas.width + 1;
             this.y = canvas.height + 5
             this.radius = Math.floor(Math.random() * 25 + 4);
