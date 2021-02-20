@@ -31,13 +31,6 @@ class bubbles {
     update() {
         let rad = this.radius;
         this.y -= this.speed;
-        if(mouse.x < this.x + this.radius &&  mouse.x > this.x - this.radius) {
-            if(mouse.y < this.y + this.radius && mouse.y > this.y - this.radius) {
-                if(this.radius > 2.3){    
-                    this.radius += 2;
-                }
-            }    
-        }
         if(this.y < 0 || this.radius > rad + 3) {
             this.x = Math.random() * canvas.width + 1;
             this.y = canvas.height + 5
@@ -45,7 +38,13 @@ class bubbles {
             this.speed = Math.random() * (this.radius / 5) + 1;
             this.hue = Math.random() * 255 + 1;
         }
-        
+        if(mouse.x < this.x + this.radius &&  mouse.x > this.x - this.radius) {
+            if(mouse.y < this.y + this.radius && mouse.y > this.y - this.radius) {
+                if(this.radius > 2.3){    
+                    this.radius += 2;
+                }
+            }    
+        } 
     }
     draw() {
         let hue = Math.random() * 255 + 1;
