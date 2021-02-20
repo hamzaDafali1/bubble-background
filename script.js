@@ -29,9 +29,8 @@ class bubbles {
         this.hue = Math.random() * 255 + 1;
     }
     update() {
-        let rad = this.radius;
         this.y -= this.speed;
-        if(this.y < 0 || this.radius > rad + 3) {
+        if(this.y < 0 ) {
             this.x = Math.random() * canvas.width + 1;
             this.y = canvas.height + 5
             this.radius = Math.floor(Math.random() * 25 + 4);
@@ -41,7 +40,7 @@ class bubbles {
         if(mouse.x < this.x + this.radius &&  mouse.x > this.x - this.radius) {
             if(mouse.y < this.y + this.radius && mouse.y > this.y - this.radius) {
                 if(this.radius > 2.3){    
-                    this.radius += 2;
+                    this.radius -= 2;
                 }
             }    
         } 
